@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+<main>
+    <div class="jumbotron">
+        <h1>Godkänn kurstillfälle</h1>
+    </div>
+    <form class="label-left" method="post">
+        <fieldset class="col-md-6">
+
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input class="form-control" id="id" readonly name="id" value="<%= data.res[0].id %>" required></input>
+            </div>
+
+            <div class="form-group">
+                <label for="namn">Namn</label>
+                <input class="form-control" readonly value="<%= data.res[0].namn %>"></input>
+            </div>
+
+            <div class="form-group">
+                <label for="antagning">Antagning</label>
+                <input class="form-control" readonly value="<%= data.res[0].antagning %>"></input>
+            </div>
+
+            <div class="form-group">
+                <label for="kurstillfalle">Kurstillfalle</label>
+                <input class="form-control" readonly value="<%= data.res[0].kurstillfalle %>"></input>
+            </div>
+
+            <div class="form-group">
+                <label for="kursansvarig">Välj kursansvarig</label>
+                <select class="form-control" id="kursansvarig" name="kursansvarig" required>
+                    <option hidden selected disabled value="null">Välj lärare</option>
+                    <% for (const row of data.teachers) { %>
+                        <option value="<%= row.akronym %>" ><%= row.kursansvarig %></option>
+                    <% }; %>
+                </select>
+            </div>
+<!--
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status" required>
+                </select>
+            </div>
+-->
+            <input class="btn btn-success" type="submit" name="doit" value="Godkänn">
+        </fieldset>
+    </form>
+</main>
+
+<% include ../partials/footer %>

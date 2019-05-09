@@ -1,0 +1,33 @@
+<% include partials/header %>
+<main class="container text-center">
+    <h2>Welcome</h2>
+    <p>
+    <div class="btns">
+        <% if (!data.user) { -%>
+            <a class="button" href="login">Log in</a>
+        <% } else { -%>
+            <div><h3>Logged in as <%=data.user%></h3></div>
+            <a class="button" href="news">News</a>
+        <% } -%>
+    </div>
+    <!-- <p>
+        <button class="button button--effect-boris">
+            <i class="button__icon fa fa-fw fa-play"></i>
+            <span class="button__text">Play</span>
+        </button>
+    </p> -->
+    </p>
+    <!-- <h3>Latest article</h3>
+    <% if (data && data.articles) { -%>
+        <% for (let article of data.articles) { -%>
+        <article class="c1">
+            <a class="article-link" href="news/<%=article.slug%>"></a>
+            <img class="summary-image" src="<%=article.imageurl%>">
+            <p><%=article.title%></p>
+            <p><date><small><%=article.date%></small></date></p>
+            
+        </article>
+        <% } -%>
+    <% } -%> -->
+</main>
+<% include partials/footer %>

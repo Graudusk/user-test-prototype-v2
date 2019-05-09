@@ -1,0 +1,64 @@
+.button {
+  position: relative;
+  display: inline-block;
+  /*margin: 1em;*/
+  /*padding: 0;*/
+  border: none;
+  /*background: none;*/
+  /*color: #286aab;
+  font-size: 1.4em;*/
+  transition: color 0.7s;
+}
+
+.button.clicked,
+.button:focus {
+  outline: none;
+  /*color: #3c8ddc;*/
+}
+
+.button__icon {
+  display: block;
+}
+
+.button__text {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0 0 -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Effect Boris */
+
+.button::after {
+  background: rgba(250, 250, 250, 0.3);
+}
+
+.button.clicked::after {
+  animation: anim-effect-boris 0.3s forwards;
+}
+
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+  }
+  25%,
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(2, 2, 1);
+  }
+}

@@ -1,0 +1,23 @@
+<% include partials/header %>
+<main class="container text-center">
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;<u>News</u></div>
+    <h2>News</h2>
+    <% if (data && data.articles) { -%>
+        <% for (let article of data.articles) { -%>
+        <article class="c1">
+            <a class="article-link" href="news/<%=article.slug%>"></a>
+            <img class="summary-image" src="<%=article.imageurl%>"><p><%=article.title%></p>
+            <p><date><small><%=article.date%></small></date></p>
+        </article>
+        <% } -%>
+    <% } -%>
+    <!-- <article class="c1">
+        <a class="article-link" href="news/moon"></a>
+        <img class="summary-image" src="f251cfb9-7179-401b-ae1a-32a07089005f.jpg"><p>Krasch på månen – men början på något nytt</p>
+    </article>
+    <article class="c1">
+        <a class="article-link" href="news/space"></a>
+        <img class="summary-image" src="sdlirjUxPszL4k-nh.jpg"><p>Forskarna om unika bilden: ”Viktigt bevis för svarta hål”</p>
+    </article> -->
+</main>
+<% include partials/footer %>

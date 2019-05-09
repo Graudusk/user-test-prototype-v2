@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<main>
+    <div class="jumbotron">
+        <h1>Aktivitetslogg</h1>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Programtillfälle</th>
+            <th>Kurskod</th>
+            <th>Läsperiod</th>
+            <th>Status</th>
+            <th>Skapad</th>
+        </tr>
+    <% for (const row of data.res) { %>  
+        <tr>
+            <td><%= row.id %></td>
+            <td><%= row.programtillfalle %></td>
+            <td><%= row.kurskod %></td>
+            <td><%= row.lasperiod %></td>
+            <td><%= row.status %></td>
+            <td><%= row.created %></td>
+        </tr>
+    <% }; %>
+    </table>
+</main>
+
+<% include ../partials/footer %>

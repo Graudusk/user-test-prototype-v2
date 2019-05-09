@@ -1,0 +1,14 @@
+<% include partials/header %>
+<main class="container text-center">
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;<u>Log in</u></div>
+    <h3>Log in</h3>
+        <form method="POST">
+            <label for="email">Email</label>
+            <input required="" type="email" name="email">
+            <label for="password">Password</label>
+            <input required="" type="password" name="password">
+            <input class="button" type="submit" name="submit" value="Log in">
+        </form>
+        <p>Don't have an account?<br/><a href="/register">Create new user</a></p>
+</main>
+<% include partials/footer %>

@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<main>
+    <div class="jumbotron">
+        <h1>Kurstillfällen</h1>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Program</th>
+            <th>År</th>
+            <th>Kurstillfälle</th>
+            <th>Kursansvarig</th>
+        </tr>
+    <% for (const row of data.res) { %>
+        <tr>
+            <td><%= row.namn %></td>
+            <td><%= row.antagning %></td>
+            <td><%= row.kurstillfalle %></td>
+            <% if (row.kursansvarig != "NULL") { %>
+                <td><%= row.kursansvarig %></td>
+            <% } else { %>
+                <td><a class="btn btn-secondary" href="/course/assign/<%=row.id%>" role="button">Tilldela</a> %></td>
+            <% } %>
+        </tr>
+    <% }; %>
+    </table>
+</main>
+
+<% include ../partials/footer %>

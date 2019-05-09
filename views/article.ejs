@@ -1,0 +1,22 @@
+<% include partials/header %>
+<%console.log(data)%>
+<main class="container">
+    <% if (data.article) { -%>
+        <div class="breadcrumbs"><a href="/">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/news">News</a>&nbsp;&nbsp;/&nbsp;&nbsp;<u><%=data.article.shortTitle%>...</u></p>
+        </div>
+        <p>
+            <small><%=data.article.date%></small>
+        </p>
+        <h3><%=data.article.title%></h3>
+        <img class="article-image" src="<%=data.article.imageurl%>">
+        <p class="pre-line">
+        <%=data.article.content%>
+        </p>
+        <p>
+            Read more at <a href="<%=data.article.sourceurl%>"><%=data.article.source%></a>
+        </p>
+    <% } else { -%>
+        <p>Article could not be found</p>
+    <% } -%>
+</main>
+<% include partials/footer %>
