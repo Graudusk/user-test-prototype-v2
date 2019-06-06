@@ -16,7 +16,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dot": "^1.1.2",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
